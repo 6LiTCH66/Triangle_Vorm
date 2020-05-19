@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Triangle_Vorm
 {
@@ -11,6 +12,8 @@ namespace Triangle_Vorm
         public double a;
         public double b;
         public double c;
+        public double d;
+
         public Triangle(double A, double B, double C)
         {
             a = A;
@@ -35,6 +38,13 @@ namespace Triangle_Vorm
             p = a + b + c; 
             return p; 
         }
+        public double SemiPerimeter()
+        {
+            double p = 0;
+            p = (a + b + c) / 2;
+            return p;
+        }
+
         public double Surface() 
         {
             double s = 0;
