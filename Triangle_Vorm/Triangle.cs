@@ -17,6 +17,32 @@ namespace Triangle_Vorm
             b = B;
             c = C;
         }
+        public string outputA() 
+        {
+            return Convert.ToString(a);
+        }
+        public string outputB()
+        {
+            return Convert.ToString(b); 
+        }
+        public string outputC() 
+        {
+            return Convert.ToString(c);
+        }
+        public double Perimeter() 
+        {
+            double p = 0;
+            p = a + b + c; 
+            return p; 
+        }
+        public double Surface() 
+        {
+            double s = 0;
+            double p = 0;
+            p = (a + b + c) / 2;
+            s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
+            return s;
+        }
 
         public double GetSetA 
         {
