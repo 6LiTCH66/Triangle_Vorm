@@ -12,22 +12,30 @@ namespace Triangle_Vorm
         public double a;
         public double b;
         public double c;
-        public double d;
+        public double h;
 
         public Triangle(double A, double B, double C)
         {
             a = A;
             b = B;
             c = C;
-            d = 0;
+            h = 0;
         }
-        public Triangle(double A, double B, double C, double D)
+        public Triangle(double A, double B, double C, double H)
         {
             a = A;
             b = B;
             c = C;
-            d = D;
+            h = H;
         }
+        public Triangle()
+        {
+            a = 0;
+            b = 0;
+            c = 0;
+            h = 0;
+        }
+
         public string outputA() 
         {
             return Convert.ToString(a);
@@ -40,6 +48,10 @@ namespace Triangle_Vorm
         {
             return Convert.ToString(c);
         }
+        public string outputH()
+        {
+            return Convert.ToString(h);
+        }
         public double Perimeter() 
         {
             double p = 0;
@@ -51,6 +63,12 @@ namespace Triangle_Vorm
             double p = 0;
             p = (a + b + c) / 2;
             return p;
+        }
+        public double Height()
+        {
+            double p = SemiPerimeter();
+            double h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a;
+            return h;
         }
 
         public double Surface() 
@@ -85,12 +103,12 @@ namespace Triangle_Vorm
             set
             {c = value;}
         }
-        public double GetSetD
+        public double GetSetH
         {
             get
-            { return d; }
+            { return h; }
             set
-            { d = value; }
+            { h = value; }
         }
 
         public bool ExistTriangle 
