@@ -19,6 +19,14 @@ namespace Triangle_Vorm
             a = A;
             b = B;
             c = C;
+            d = 0;
+        }
+        public Triangle(double A, double B, double C, double D)
+        {
+            a = A;
+            b = B;
+            c = C;
+            d = D;
         }
         public string outputA() 
         {
@@ -76,6 +84,13 @@ namespace Triangle_Vorm
             {return c;}
             set
             {c = value;}
+        }
+        public double GetSetD
+        {
+            get
+            { return d; }
+            set
+            { d = value; }
         }
 
         public bool ExistTriangle 
