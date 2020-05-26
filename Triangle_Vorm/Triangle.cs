@@ -115,9 +115,25 @@ namespace Triangle_Vorm
         {
             get
             {
-                if ((a > b + c) && (b > a + c) && (c > a + b))
+                if ((a < b + c) && (b < a + c) && (c < a + b))
                     return false;
                 else return true;
+            }
+        }
+
+        public string TypeOfTirangle
+        {
+            get
+            {
+                if ((a == b) || (b == c) || (a == c))
+                {
+                    return "Равнобедренный треугольник";
+                }
+                else if ((a == b) && (b == c) && (c == a))
+                { 
+                    return "Равносторонний треугольник";
+                }
+                else return "Разносторонний треугольник";
             }
         }
 
