@@ -56,18 +56,12 @@ namespace Triangle_Vorm
 
             if (triangle.ExistTriangle) { listView1.Items[6].SubItems.Add("Существует"); }
             else listView1.Items[6].SubItems.Add("Не существует");
-
-            
-
-
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             Form2 frm = new Form2();
             frm.Show();
         }
-
-       
     }
 }
