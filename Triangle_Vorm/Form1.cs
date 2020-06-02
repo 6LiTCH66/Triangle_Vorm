@@ -29,8 +29,10 @@ namespace Triangle_Vorm
             b = Convert.ToDouble(txtB.Text);
             c = Convert.ToDouble(txtC.Text);
 
+            
             Triangle triangle = new Triangle(a, b, c);
 
+          
             listView1.Items.Add("Сторона а");
             listView1.Items.Add("Сторона b");
             listView1.Items.Add("Сторона c");
@@ -41,7 +43,7 @@ namespace Triangle_Vorm
 
             listView1.Items.Add("Существует?");
             listView1.Items.Add("Спецификатор");
-
+            
             listView1.Items[0].SubItems.Add(triangle.outputA());
             listView1.Items[1].SubItems.Add(triangle.outputB());
             listView1.Items[2].SubItems.Add(triangle.outputC());
@@ -56,6 +58,21 @@ namespace Triangle_Vorm
 
             if (triangle.ExistTriangle) { listView1.Items[6].SubItems.Add("Существует"); }
             else listView1.Items[6].SubItems.Add("Не существует");
+
+            try
+            {
+                if (string.IsNullOrEmpty(txtA.Text) || string.IsNullOrEmpty(txtB.Text) || string.IsNullOrEmpty(txtC.Text))
+                {
+                    MessageBox.Show("Не все поля были заполнены");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Все поля были заполнены");
+
+            }
+
+
         }
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
@@ -63,5 +80,6 @@ namespace Triangle_Vorm
             Form2 frm = new Form2();
             frm.Show();
         }
+
     }
 }
