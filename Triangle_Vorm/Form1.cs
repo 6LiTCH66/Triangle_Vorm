@@ -36,7 +36,7 @@ namespace Triangle_Vorm
                 a = Convert.ToDouble(txtA.Text);
                 b = Convert.ToDouble(txtB.Text);
                 c = Convert.ToDouble(txtC.Text);
-
+                    
 
                 Triangle triangle = new Triangle(a, b, c);
 

@@ -7,6 +7,55 @@ using System.Windows.Forms;
 
 namespace Triangle_Vorm
 {
+    class Triangle2
+    {
+        public double a;
+        public double h;
+
+        public Triangle2(double A, double H)
+        {
+            a = A;
+            h = H;
+        }
+        public Triangle2()
+        {
+            a = 0;
+            h = 0;
+        }
+
+        public string outputA2()
+        {
+            return Convert.ToString(a);
+        }
+
+        public string outputH2()
+        {
+            return Convert.ToString(h);
+        }
+
+        public double areaOfTriangle()
+        {
+            double s = 0;
+            s = (0.5 * (a*h));
+            return s;
+        }
+        public double GetSetA
+        {
+            get
+            { return a; }
+            set
+            { a = value; }
+        }
+        public double GetSetH
+        {
+            get
+            { return h; }
+            set
+            { h = value; }
+        }
+
+
+    }
     class Triangle
     {
         public double a;
@@ -28,6 +77,7 @@ namespace Triangle_Vorm
             c = C;
             h = H;
         }
+        
         public Triangle()
         {
             a = 0;
@@ -35,6 +85,7 @@ namespace Triangle_Vorm
             c = 0;
             h = 0;
         }
+        
 
         public string outputA() 
         {
@@ -80,7 +131,7 @@ namespace Triangle_Vorm
             return s;
         }
 
-        public double GetSetA 
+        public double GetSetA
         {
             get 
             {return a;}
@@ -88,7 +139,7 @@ namespace Triangle_Vorm
             {a = value;}
         }
 
-        public double GetSetB 
+        public double GetSetB
         {
             get
             {return b;}
@@ -96,7 +147,7 @@ namespace Triangle_Vorm
             {b = value;}
         }
 
-        public double GetSetC 
+        public double GetSetC
         {
             get
             {return c;}
@@ -111,7 +162,7 @@ namespace Triangle_Vorm
             { h = value; }
         }
 
-        public bool ExistTriangle 
+        public bool ExistTriangle
         {
             get
             {
@@ -138,4 +189,5 @@ namespace Triangle_Vorm
         }
 
     }
+    
 }
