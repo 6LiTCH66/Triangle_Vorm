@@ -56,12 +56,72 @@ namespace Triangle_Vorm
 
 
     }
+    class Triangle3
+    {
+        public double a;
+        public double corner;
+
+        public Triangle3(double A, double Corner)
+        {
+            a = A;
+            corner = Corner;
+        }
+        public Triangle3()
+        {
+            a = 0;
+            corner = 0;
+        }
+        public string outputA()
+        {
+            return Convert.ToString(a);
+        }
+        public string outputCorner()
+        {
+            return Convert.ToString(corner);
+        }
+
+        public double GetSetA {
+            get { return a; }
+            set { a = value; }
+        }
+
+        public double GetSetCorner {
+            get { return corner; }
+            set { corner = value; }
+        }
+
+
+        public double Height()
+        {
+            double h = 0;
+            h = a * Math.Sin(corner);
+            return h;
+        }
+        public double Area()
+        {
+            double s = 0;
+            double h = 0;
+            h = Height();
+
+            s = 0.5 * (a * h);
+            return s;
+        }
+        public bool ExistTriangle {
+            get {
+                if (corner > 89.0)
+                    return false;
+                else return true;
+            }
+        }
+
+    }
     class Triangle
     {
         public double a;
         public double b;
         public double c;
         public double h;
+
 
         public Triangle(double A, double B, double C)
         {
@@ -85,7 +145,16 @@ namespace Triangle_Vorm
             c = 0;
             h = 0;
         }
-        
+        public Triangle(double A, double B)
+        {
+            a = A;
+            b = B;
+        }
+
+        public Triangle(double A)
+        {
+            a = A;
+        }
 
         public string outputA() 
         {
@@ -120,6 +189,35 @@ namespace Triangle_Vorm
             double p = SemiPerimeter();
             double h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a;
             return h;
+        }
+
+        public double HeightH()
+        {
+            double h = 0;
+            h = a * b / Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
+            return h;
+        }
+
+        public double AreaS()
+        {
+            double s = 0;
+            s = 0.5 * (a * b);
+            return s;
+        }
+
+        public double Height_H()
+        {
+            double h = 0;
+            h = a * Math.Sqrt(3) / 2;
+            return h;
+        }
+        public double Area_S()
+        {
+            double s = 0;
+            double h = Height_H();
+
+            s = 0.5 * (a * h);
+            return s;
         }
 
         public double Surface() 
@@ -161,7 +259,6 @@ namespace Triangle_Vorm
             set
             { h = value; }
         }
-
         public bool ExistTriangle
         {
             get
