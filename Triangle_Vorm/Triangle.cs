@@ -56,65 +56,6 @@ namespace Triangle_Vorm
 
 
     }
-    class Triangle3
-    {
-        public double a;
-        public double corner;
-
-        public Triangle3(double A, double Corner)
-        {
-            a = A;
-            corner = Corner;
-        }
-        public Triangle3()
-        {
-            a = 0;
-            corner = 0;
-        }
-        public string outputA()
-        {
-            return Convert.ToString(a);
-        }
-        public string outputCorner()
-        {
-            return Convert.ToString(corner);
-        }
-
-        public double GetSetA {
-            get { return a; }
-            set { a = value; }
-        }
-
-        public double GetSetCorner {
-            get { return corner; }
-            set { corner = value; }
-        }
-
-
-        public double Height()
-        {
-            double h = 0;
-            h = a * Math.Sin(corner);
-            return h;
-        }
-        public double Area()
-        {
-            double s = 0;
-            double h = 0;
-            h = Height();
-
-            s = 0.5 * (a * h);
-            return s;
-        }
-        public bool ExistTriangle {
-            get {
-                if (corner > 89.0)
-                    return false;
-                else return true;
-            }
-        }
-
-    }
     class Triangle
     {
         public double a;
@@ -172,7 +113,7 @@ namespace Triangle_Vorm
         {
             return Convert.ToString(h);
         }
-        public double Perimeter() 
+        public double Perimeter()
         {
             double p = 0;
             p = a + b + c; 

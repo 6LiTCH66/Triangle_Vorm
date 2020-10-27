@@ -12,7 +12,7 @@ namespace Triangle_Vorm
 {
     public partial class Form3 : Form
     {
-        CheckBox ch_box1, ch_box2, ch_box3, ch_box4, ch_box5, ch_box6;
+        CheckBox ch_box1, ch_box2, ch_box3, ch_box4, ch_box5;
         Label lbl;
         Button Run_Button1;
         public Form3()
@@ -43,10 +43,6 @@ namespace Triangle_Vorm
             ch_box5.Location = new Point(489, 96);
             ch_box5.Size = new Size(136, 17);
 
-            ch_box6 = new CheckBox();
-            ch_box6.Text = "Угол треугольника α";
-            ch_box6.Location = new Point(174, 168);
-            ch_box6.Size = new Size(136, 17);
 
             lbl = new Label();
             lbl.Text = "Какие данные у вас есть?";
@@ -62,7 +58,6 @@ namespace Triangle_Vorm
 
             Controls.Add(Run_Button1);
             Controls.Add(lbl);
-            Controls.Add(ch_box6);
             Controls.Add(ch_box5);
             Controls.Add(ch_box4);
             Controls.Add(ch_box3);
@@ -95,19 +90,14 @@ namespace Triangle_Vorm
                 ch_box1.Checked = false;
                 ch_box2.Checked = false;
             }
+
             else if (ch_box1.Checked)
             {
                 Form1 frm = new Form1();
                 frm.Show();
                 ch_box1.Checked = false;
             }
-            else if(ch_box1.Checked && ch_box6.Checked)
-            {
-                Form1 frm = new Form1();
-                frm.Show();
-                ch_box1.Checked = false;
-                ch_box6.Checked = false;
-            }
+
             else if (ch_box1.Checked && ch_box2.Checked && ch_box3.Checked && ch_box4.Checked && ch_box5.Checked)
             {
                 MessageBox.Show("Данные выбраны не правильно");
