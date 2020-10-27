@@ -113,6 +113,15 @@ namespace Triangle_Vorm
         {
             return Convert.ToString(h);
         }
+        public double PifagorC()
+        {
+            double c;
+
+            c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
+
+            return c;
+        }
+
         public double Perimeter()
         {
             double p = 0;
