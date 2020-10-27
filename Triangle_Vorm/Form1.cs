@@ -12,9 +12,13 @@ namespace Triangle_Vorm
 {
     public partial class Form1 : Form
     {
+        Graphics gp;
+        Pen p = new Pen(Brushes.Black, 1);
+        Panel panel = new Panel();
         public Form1()
         {
             InitializeComponent();
+            gp = panel1.CreateGraphics();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,6 +44,13 @@ namespace Triangle_Vorm
 
                 Triangle triangle = new Triangle(a, b, c);
 
+                int A_int = Convert.ToInt32(a);
+                int B_int = Convert.ToInt32(b);
+                int C_int = Convert.ToInt32(c);
+
+                Point p1 = new Point(A_int, A_int);
+                Point p2 = new Point(B_int, B_int);
+                Point p3 = new Point(C_int, C_int);
 
                 listView1.Items.Add("Сторона а");
                 listView1.Items.Add("Сторона b");
@@ -89,9 +100,6 @@ namespace Triangle_Vorm
                 listView1.Items[2].SubItems.Add(Convert.ToString(triangle.HeightH()));
                 listView1.Items[3].SubItems.Add(Convert.ToString(triangle.AreaS()));
 
-                if (triangle.ExistTriangle) { listView1.Items[4].SubItems.Add("Существует"); }
-                else listView1.Items[4].SubItems.Add("Не существует");
-
 
 
             }
@@ -111,8 +119,6 @@ namespace Triangle_Vorm
                 listView1.Items[2].SubItems.Add(Convert.ToString(triangle.Area_S()));
 
             }
-            
-
 
         }
 
@@ -122,5 +128,16 @@ namespace Triangle_Vorm
             frm.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Point p1 = new Point(10, 100);
+            Point p2 = new Point(100, 50);
+            Point p3 = new Point(10, 60);
+
+            gp.DrawLine(p, p1, p2);
+            gp.DrawLine(p, p2, p3);
+            gp.DrawLine(p, p3, p1);
+
+        }
     }
 }
