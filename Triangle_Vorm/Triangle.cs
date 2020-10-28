@@ -86,6 +86,7 @@ namespace Triangle_Vorm
             c = 0;
             h = 0;
         }
+
         public Triangle(double A, double B)
         {
             a = A;
@@ -113,6 +114,34 @@ namespace Triangle_Vorm
         {
             return Convert.ToString(h);
         }
+
+        public double DegA()
+        {
+            double DegAlpha;
+
+            DegAlpha = Math.Acos((b * b + c * c - a * a) / (2 * b * c)) * 180 / Math.PI;
+
+            return DegAlpha;
+        }
+
+        public double DegB()
+        {
+            double DegBeta;
+
+            DegBeta = Math.Acos((a * a + c * c - b * b) / (2 * a * c)) * 180 / Math.PI;
+
+            return DegBeta;
+        }
+
+        public double DegY()
+        {
+            double DegGamma;
+
+            DegGamma = Math.Acos((a * a + b * b - c * c) / (2 * a * b)) * 180 / Math.PI;
+
+            return DegGamma;
+        }
+
         public double PifagorC()
         {
             double c;
@@ -209,13 +238,15 @@ namespace Triangle_Vorm
             set
             { h = value; }
         }
+
         public bool ExistTriangle
         {
             get
             {
+                //double c = PifagorC();
                 if ((a < b + c) && (b < a + c) && (c < a + b))
-                    return false;
-                else return true;
+                    return true;
+                else return false;
             }
         }
 
